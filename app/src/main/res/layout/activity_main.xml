@@ -1,19 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:onClick="clickStart"
+        android:text="启动服务"
+        app:layout_constraintRight_toLeftOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_bind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="绑定服务"
+        app:layout_constraintLeft_toRightOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_invoke_remote_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始执行远程服务"
+        app:layout_constraintLeft_toLeftOf="@id/btn_bind"
+        app:layout_constraintTop_toBottomOf="@id/btn_bind"/>
+
+    <Button
+        android:id="@+id/btn_unbind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="解绑服务"
+        app:layout_constraintLeft_toLeftOf="@id/btn_bind"
+        app:layout_constraintTop_toBottomOf="@id/btn_invoke_remote_service"/>
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickStop"
+        android:text="停止服务"
+        app:layout_constraintLeft_toLeftOf="@id/btn_start"
+        app:layout_constraintTop_toBottomOf="@id/btn_start"/>
+
+    <Button
+        android:id="@+id/btn_bind2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="第二个用户绑定服务"
+        app:layout_constraintLeft_toLeftOf="@id/btn_bind"
+        app:layout_constraintTop_toBottomOf="@id/btn_unbind"/>
+
+    <Button
+        android:id="@+id/btn_invoke_remote_service2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="第二个用户\n开始执行远程服务"
+        app:layout_constraintLeft_toLeftOf="@id/btn_bind2"
+        app:layout_constraintTop_toBottomOf="@id/btn_bind2"/>
+
+    <Button
+        android:id="@+id/btn_unbind2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="第二个用户\n解绑服务"
+        app:layout_constraintLeft_toLeftOf="@id/btn_bind2"
+        app:layout_constraintTop_toBottomOf="@id/btn_invoke_remote_service2"/>
+
 
 </android.support.constraint.ConstraintLayout>
