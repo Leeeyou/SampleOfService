@@ -9,6 +9,7 @@ import android.os.IBinder
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
+import com.leeeyou.sampleofservice.book.BookManagerActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -54,6 +55,12 @@ class MainActivity : AppCompatActivity() {
 
         mIntent2 = Intent(this@MainActivity, PayService::class.java)
         secondClient()
+
+        gotoBookManagerActivity()
+    }
+
+    private fun gotoBookManagerActivity() {
+        btnBookManager.setOnClickListener { startActivity(Intent(this@MainActivity, BookManagerActivity::class.java)) }
     }
 
     private fun firstClient() {
